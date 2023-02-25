@@ -1,0 +1,22 @@
+{
+    "name": "Edit HTML",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Edit the HTML of any webpage by clicking on an element",
+    "permissions": ["activeTab", "storage"],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+      },
+    "action": {
+      "default_icon": "icon.png",
+      "default_title": "Edit HTML",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
